@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#080d18">
+
+<title>Moroccan Ad Voiceover</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    background:#080d18;
+    color:#fff;
+    font-family:Arial,Tahoma,sans-serif;
+    min-height:100vh;
+    padding:20px;
+}
+
+.container{
+    max-width:850px;
+    margin:auto;
+}
+
+header{
+    text-align:center;
+    padding:35px 10px;
+}
+
+.logo{
+    width:65px;
+    height:65px;
+    background:linear-gradient(135deg,#087cff,#00c6ff);
+    border-radius:20px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin:0 auto 18px;
+    font-size:30px;
+    box-shadow:0 0 30px #087cff55;
+}
+
+header h1{
+    font-size:27px;
+    margin-bottom:12px;
+}
+
+header h1 span{
+    color:#159cff;
+}
+
+header p{
+    color:#8c9bb2;
+    font-size:14px;
+    line-height:1.8;
+}
+
+.card{
+    background:#101a2b;
+    border:1px solid #1c2b42;
+    border-radius:18px;
+    padding:22px;
+    margin-bottom:18px;
+}
+
+.card-title{
+    font-size:17px;
+    margin-bottom:18px;
+    display:flex;
+    align-items:center;
+    gap:9px;
+}
+
+textarea{
+    width:100%;
+    height:190px;
+    resize:vertical;
+    background:#080f1d;
+    border:1px solid #263852;
+    border-radius:12px;
+    padding:16px;
+    color:white;
+    font-size:16px;
+    line-height:1.9;
+    outline:none;
+    font-family:Arial,Tahoma,sans-serif;
+}
+
+textarea:focus{
+    border-color:#168cff;
+    box-shadow:0 0 0 3px #168cff18;
+}
+
+textarea::placeholder{
+    color:#62738b;
+}
+
+.counter{
+    display:flex;
+    justify-content:space-between;
+    color:#71839c;
+    font-size:12px;
+    margin-top:12px;
+}
+
+label{
+    display:block;
+    color:#c9d5e6;
+    font-size:14px;
+    margin-bottom:10px;
+}
+
+select{
+    width:100%;
+    padding:14px;
+    background:#080f1d;
+    border:1px solid #263852;
+    border-radius:10px;
+    color:white;
+    font-size:14px;
+    outline:none;
+    margin-bottom:20px;
+}
+
+select:focus{
+    border-color:#168cff;
+}
+
+.settings{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:18px;
+}
+
+.range-box{
+    margin-bottom:20px;
+}
+
+.range-info{
+    display:flex;
+    justify-content:space-between;
+    margin-bottom:12px;
+    font-size:14px;
+    color:#c9d5e6;
+}
+
+.range-info span{
+    color:#159cff;
+}
+
+input[type=range]{
+    width:100%;
+    accent-color:#168cff;
+    cursor:pointer;
+}
+
+.buttons{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:12px;
+}
+
+button{
+    border:none;
+    padding:15px;
+    border-radius:11px;
+    font-size:15px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:.2s;
+}
+
+button:active{
+    transform:scale(.97);
+}
+
+.play{
+    background:linear-gradient(135deg,#087cff,#00aaff);
+    color:white;
+    grid-column:span 2;
+}
+
+.pause{
+    background:#1c2b42;
+    color:white;
+}
+
+.stop{
+    background:#341d2a;
+    color:#ff8299;
+}
+
+.status{
+    margin-top:18px;
+    padding:13px;
+    background:#080f1d;
+    border-radius:10px;
+    text-align:center;
+    color:#8195af;
+    font-size:13px;
+}
+
+.status.active{
+    color:#30caff;
+}
+
+.note{
+    color:#71839c;
+    font-size:12px;
+    line-height:1.8;
+    margin-top:15px;
+}
+
+footer{
+    text-align:center;
+    color:#60718a;
+    font-size:12px;
+    padding:25px 10px;
+}
+
+@media(max-width:550px){
+
+    body{
+        padding:12px;
+    }
+
+    header h1{
+        font-size:23px;
+    }
+
+    .card{
+        padding:17px;
+    }
+
+    .settings{
+        grid-template-columns:1fr;
+        gap:0;
+    }
+
+    textarea{
+        height:170px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<header>
+
+<div class="logo">🎙️</div>
+
+<h1>Moroccan <span>Ad Voiceover</span></h1>
+
+<p>
+حوّل نصوصك الإعلانية إلى تعليق صوتي بسهولة
+<br>
+أداة مجانية لإنشاء التعليقات الصوتية
+</p>
+
+</header>
+
+
+<div class="card">
+
+<div class="card-title">
+✍️ اكتب النص الإعلاني
+</div>
+
+<textarea id="text"
+placeholder="مرحبا بيك أخي، اليوم جبت ليك واحد العرض مميز..."></textarea>
+
+<div class="counter">
+
+<span id="characters">0 حرف</span>
+
+<span id="words">0 كلمة</span>
+
+</div>
+
+</div>
+
+
+<div class="card">
+
+<div class="card-title">
+🎧 إعدادات الصوت
+</div>
+
+<label>اختيار الصوت</label>
+
+<select id="voice">
+
+<option value="">جاري تحميل الأصوات...</option>
+
+</select>
+
+<div class="settings">
+
+<div>
+
+<label>سرعة الكلام</label>
+
+<div class="range-box">
+
+<div class="range-info">
+<span>السرعة</span>
+<span id="rateValue">1.0</span>
+</div>
+
+<input type="range"
+id="rate"
+min="0.5"
+max="2"
+step="0.1"
+value="1">
+
+</div>
+
+</div>
+
+
+<div>
+
+<label>حدة الصوت</label>
+
+<div class="range-box">
+
+<div class="range-info">
+<span>الحدة</span>
+<span id="pitchValue">1.0</span>
+</div>
+
+<input type="range"
+id="pitch"
+min="0.5"
+max="2"
+step="0.1"
+value="1">
+
+</div>
+
+</div>
+
+</div>
+
+
+<div class="range-box">
+
+<div class="range-info">
+<span>مستوى الصوت</span>
+<span id="volumeValue">100%</span>
+</div>
+
+<input type="range"
+id="volume"
+min="0"
+max="1"
+step="0.1"
+value="1">
+
+</div>
+
+</div>
+
+
+<div class="card">
+
+<div class="card-title">
+🎬 التحكم في التعليق الصوتي
+</div>
+
+<div class="buttons">
+
+<button class="play" onclick="speakText()">
+▶ إنشاء وتشغيل الصوت
+</button>
+
+<button class="pause" onclick="pauseText()">
+⏸ إيقاف مؤقت
+</button>
+
+<button class="stop" onclick="stopText()">
+⏹ إيقاف الصوت
+</button>
+
+</div>
+
+<div class="status" id="status">
+جاهز لإنشاء التعليق الصوتي
+</div>
+
+<p class="note">
+ملاحظة: تعتمد جودة الصوت واللهجة المغربية
+على الأصوات المتوفرة في جهازك أو متصفحك.
+</p>
+
+</div>
+
+
+<footer>
+
+Moroccan Ad Voiceover © 2026
+
+<br><br>
+
+أداة مجانية لصناعة التعليقات الصوتية الإعلانية
+
+</footer>
+
+</div>
+
+
+<script>
+
+const textInput = document.getElementById("text");
+const voiceSelect = document.getElementById("voice");
+
+const rate = document.getElementById("rate");
+const pitch = document.getElementById("pitch");
+const volume = document.getElementById("volume");
+
+const statusBox = document.getElementById("status");
+
+let voices = [];
+
+
+// التحقق من دعم المتصفح
+
+if (!("speechSynthesis" in window)) {
+
+statusBox.textContent =
+"عذراً، متصفحك لا يدعم تحويل النص إلى صوت.";
+
+}
+
+
+// تحميل الأصوات
+
+function loadVoices(){
+
+voices = window.speechSynthesis.getVoices();
+
+voiceSelect.innerHTML = "";
+
+if(voices.length === 0){
+
+let option = document.createElement("option");
+
+option.textContent = "لا توجد أصوات متاحة";
+
+voiceSelect.appendChild(option);
+
+return;
+
+}
+
+// ترتيب الأصوات العربية أولاً
+
+voices.sort((a,b)=>{
+
+return Number(b.lang.toLowerCase().startsWith("ar")) -
+Number(a.lang.toLowerCase().startsWith("ar"));
+
+});
+
+voices.forEach((voice,index)=>{
+
+let option = document.createElement("option");
+
+option.value = index;
+
+option.textContent =
+voice.name + " (" + voice.lang + ")";
+
+voiceSelect.appendChild(option);
+
+});
+
+}
+
+loadVoices();
+
+window.speechSynthesis.onvoiceschanged = loadVoices;
+
+
+// عداد الكلمات والحروف
+
+textInput.addEventListener("input",()=>{
+
+let text = textInput.value.trim();
+
+document.getElementById("characters").textContent =
+textInput.value.length + " حرف";
+
+let words = text ? text.split(/\s+/).length : 0;
+
+document.getElementById("words").textContent =
+words + " كلمة";
+
+});
+
+
+// عرض إعدادات الصوت
+
+rate.addEventListener("input",()=>{
+
+document.getElementById("rateValue").textContent =
+rate.value;
+
+});
+
+pitch.addEventListener("input",()=>{
+
+document.getElementById("pitchValue").textContent =
+pitch.value;
+
+});
+
+volume.addEventListener("input",()=>{
+
+document.getElementById("volumeValue").textContent =
+Math.round(volume.value*100)+"%";
+
+});
+
+
+// تشغيل الصوت
+
+function speakText(){
+
+let text = textInput.value.trim();
+
+if(!text){
+
+statusBox.textContent =
+"يرجى كتابة النص أولاً.";
+
+return;
+
+}
+
+window.speechSynthesis.cancel();
+
+let speech = new SpeechSynthesisUtterance(text);
+
+let selectedVoice = voiceSelect.value;
+
+if(selectedVoice !== "" && voices[selectedVoice]){
+
+speech.voice = voices[selectedVoice];
+
+speech.lang = voices[selectedVoice].lang;
+
+}else{
+
+speech.lang = "ar-MA";
+
+}
+
+speech.rate = parseFloat(rate.value);
+
+speech.pitch = parseFloat(pitch.value);
+
+speech.volume = parseFloat(volume.value);
+
+
+speech.onstart = function(){
+
+statusBox.textContent =
+"🔊 يتم تشغيل التعليق الصوتي الآن...";
+
+statusBox.classList.add("active");
+
+};
+
+speech.onend = function(){
+
+statusBox.textContent =
+"تم الانتهاء من تشغيل التعليق الصوتي.";
+
+statusBox.classList.remove("active");
+
+};
+
+speech.onerror = function(){
+
+statusBox.textContent =
+"حدث خطأ أثناء تشغيل الصوت.";
+
+statusBox.classList.remove("active");
+
+};
+
+window.speechSynthesis.speak(speech);
+
+}
+
+
+// إيقاف مؤقت
+
+function pauseText(){
+
+if(window.speechSynthesis.speaking){
+
+window.speechSynthesis.pause();
+
+statusBox.textContent = "تم إيقاف الصوت مؤقتاً.";
+
+}
+
+}
+
+
+// استئناف التشغيل
+
+function resumeText(){
+
+window.speechSynthesis.resume();
+
+}
+
+
+// إيقاف الصوت نهائياً
+
+function stopText(){
+
+window.speechSynthesis.cancel();
+
+statusBox.textContent =
+"تم إيقاف التعليق الصوتي.";
+
+statusBox.classList.remove("active");
+
+}
+
+</script>
+
+</body>
+</html>
